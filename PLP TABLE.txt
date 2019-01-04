@@ -1,0 +1,14 @@
+ create table User_Role(User_Name varchar(20) primary key,Password varchar(12),Role_Code varchar(10));
+
+
+
+ create table Accounts(Account_Number number(10),Insured_Name varchar(30),Insured_Street varchar(40),Insured_City varchar(15),Insured_State varchar(15),Insured_Zip number(5),Business_Segment varchar(30),User_Name REFERENCES User_Role(User_Name));
+
+
+
+**************
+
+create table Policy(Policy Number number(10) primary key,Policy Premium Number(8,2),Account Number number(10) references Accounts(Account Number));
+  
+
+create table Policy Details(Policy Number number(10),Question ID varchar(15),Answer varchar(30));
